@@ -1,0 +1,29 @@
+/* App.css */
+html,
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  height: 100%;
+}
+/* src/App.css */
+.product-tile {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.product-tile:hover {
+  transform: scale(1.05);
+}
+.modal-content {
+  padding: 20px;
+}
