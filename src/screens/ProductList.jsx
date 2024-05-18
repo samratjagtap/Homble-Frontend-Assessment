@@ -1,4 +1,3 @@
-// src/screens/ProductList.jsx
 import React, { useEffect, useState } from 'react';
 import { getRequest, postRequest } from '../axios';
 import { Container, Row, Col, Button, Modal, Form, Spinner, Card } from 'react-bootstrap';
@@ -46,17 +45,14 @@ const ProductList = () => {
   const handleSubmit = async () => {
     try {
       console.log('Adding product:', newProduct);
-      // Make a POST request to add the new product
       await postRequest('/products', newProduct, { contentType: 'application/json' });
-  
-      // Fetch the updated list of products after adding the new one
+
       console.log('Fetching updated products...');
       const response = await getRequest('/products');
-      const sortedProducts = response.data.sort((a, b) => a.selling_price - b.selling_price); // Sort products by selling price
+      const sortedProducts = response.data.sort((a, b) => a.selling_price - b.selling_price); 
       console.log('Updated products:', sortedProducts);
       setProducts(sortedProducts);
   
-      // Close the modal and reset the form fields
       handleClose();
     } catch (err) {
       console.error('Error adding product:', err);
